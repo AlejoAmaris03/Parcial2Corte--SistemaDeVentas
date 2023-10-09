@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class ProductoDAO{
     Conexion c = new Conexion();
-    Connection con;
+    Connection con = c.conexion();
     PreparedStatement ps = null;
     ResultSet rs = null;
     int r;
@@ -16,7 +16,6 @@ public class ProductoDAO{
     //Op. del CRUD
     
     public ArrayList<Producto> listar(){
-        con = c.conexion();
         ArrayList<Producto> listaP = new ArrayList<Producto>();
         
         try{
@@ -40,9 +39,7 @@ public class ProductoDAO{
         
         return listaP;
     }
-    public int agregar(Producto p){
-        con = c.conexion();
-        
+    public int agregar(Producto p){        
         try{
             ps = con.prepareStatement("INSERT INTO Producto (Nombres,Precio,Stock,Estado)"
                 +"VALUES (?,?,?,?)");
@@ -59,7 +56,6 @@ public class ProductoDAO{
         return r;
     }
     public Producto listarId(int id){
-        con = c.conexion();
         Producto p = new Producto();
         
         try{
@@ -80,9 +76,7 @@ public class ProductoDAO{
         
         return p;
     }
-    public int actualizar(Producto p){
-        con = c.conexion();
-        
+    public int actualizar(Producto p){        
         try{
             ps = con.prepareStatement("UPDATE Producto SET Nombres = ?,Precio = ?,Stock = ?,Estado = ? WHERE (IdProducto = ?)");
             ps.setString(1,p.getNombre());
@@ -98,9 +92,7 @@ public class ProductoDAO{
         
         return r;
     }
-    public void eliminar(int id){
-        con = c.conexion();
-        
+    public void eliminar(int id){        
         try{
             ps = con.prepareStatement("DELETE FROM Producto WHERE IdProducto = "+id);
             ps.executeUpdate();

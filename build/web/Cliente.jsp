@@ -17,31 +17,31 @@
                 <div class="card-body">
                     <form action="Controlador?menu=Cliente" method="post">
                         <div class="form-group">
-                            <input class="form-control" type="hidden" name="id" value="${c.getId()}">
+                            <input class="form-control rounded-pill" type="hidden" name="id" value="${c.getId()}">
                         </div>
 
                         <div class="form-group">
                             <label>Dni</label>
-                            <input class="form-control" type="text" name="dni" value="${c.getDni()}">
+                            <input class="form-control rounded-pill" type="text" name="dni" value="${c.getDni()}">
                         </div>
 
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input class="form-control" type="text" name="nombre" value="${c.getNombre()}">
+                            <input class="form-control rounded-pill" type="text" name="nombre" value="${c.getNombre()}">
                         </div>
 
                         <div class="form-group">
                             <label>Direccion</label>
-                            <input class="form-control" type="text" name="direccion" value="${c.getDireccion()}">
+                            <input class="form-control rounded-pill" type="text" name="direccion" value="${c.getDireccion()}">
                         </div>
 
                         <div class="form-group">
                             <label>Estado</label>
-                            <input class="form-control" type="text" name="estado" value="${c.getEstado()}">
+                            <input class="form-control rounded-pill" type="text" name="estado" value="${c.getEstado()}">
                         </div>
 
-                        <input class="btn btn-info" type="submit" name="accion" value="Agregar">
-                        <input class="btn btn-success" type="submit" name="accion" value="Actualizar">
+                        <input class="btn btn-info rounded-pill" type="submit" name="accion" value="Agregar">
+                        <input class="btn btn-success rounded-pill" type="submit" name="accion" value="Actualizar">
                     </form>
                 </div>
             </div>
@@ -67,8 +67,8 @@
                                 <td>${cl.getDireccion()}</td>
                                 <td>${cl.getEstado()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Editar&id=${cl.getId()}">Editar</a>
-                                    <a class="btn btn-danger" href="Controlador?menu=Cliente&accion=Eliminar&id=${cl.getId()}">Eliminar</a>
+                                    <a class="btn btn-warning rounded-pill" href="Controlador?menu=Cliente&accion=Editar&id=${cl.getId()}">Editar</a>
+                                    <a class="btn btn-danger rounded-pill" href="Controlador?menu=Cliente&accion=Eliminar&id=${cl.getId()}">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>

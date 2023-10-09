@@ -208,6 +208,17 @@ public class Controlador extends HttpServlet {
         }
 
         if (menu.equals("NuevaVenta")) {
+            switch (accion) {
+                case "Buscar Cliente":
+                    String dni = request.getParameter("codigoCliente");
+                    
+                    c = cDAO.buscar(dni);
+                    request.setAttribute("c",c);
+                    break;
+                default:
+                    break;
+            }
+            
             request.getRequestDispatcher("/RegistrarVenta.jsp").forward(request, response);
         }
     }

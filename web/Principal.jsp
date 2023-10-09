@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <nav class="navbar navbar-expand-lg navbar-light bg-info d-flex">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
@@ -19,34 +19,34 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" 
+                        <a style="margin-left:10px; border:none; border-radius: 20px" class="btn btn-outline-light" 
                            href="Controlador?menu=Principal">Inicio</a>
                     </li>
                     
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" 
+                        <a style="margin-left: 10px; border:none; border-radius: 20px" class="btn btn-outline-light" 
                            href="Controlador?menu=Producto&accion=Listar" target="frame">Producto</a>
                     </li>
 
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" 
+                        <a style="margin-left: 10px; border:none; border-radius: 20px" class="btn btn-outline-light" 
                            href="Controlador?menu=Empleado&accion=Listar" target="frame">Empleado</a>
                     </li>
 
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" 
+                        <a style="margin-left: 10px; border:none; border-radius: 20px" class="btn btn-outline-light" 
                            href="Controlador?menu=Cliente&accion=Listar" target="frame">Clientes</a>
                     </li>
 
                     <li style="margin-left: 10px; border:none" class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" 
-                           href="Controlador?menu=NuevaVenta" target="frame">Nueva Venta</a>
+                        <a style="margin-left: 10px; border:none; border-radius: 20px" class="btn btn-outline-light" 
+                           href="Controlador?menu=NuevaVenta&accion=default" target="frame">Nueva Venta</a>
                     </li>
                 </ul>
             </div>
 
             <div class="dropdown">
-                <button style="border:none" class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                <button style="border:none; border-radius: 20px" class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                     ${user.getNombre()}
                 </button>
 
@@ -60,7 +60,7 @@
                     <div class="dropdown-divider"></div>
 
                     <form action="Validar" method="post">
-                        <button class="dropdown-item" name="accion" value="Salir" href="#">Salir</button>
+                        <button class="dropdown-item" name="accion" value="Salir">Salir</button>
                     </form>
                 </div>
             </div>

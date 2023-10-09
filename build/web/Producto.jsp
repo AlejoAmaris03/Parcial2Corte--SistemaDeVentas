@@ -22,26 +22,26 @@
 
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input class="form-control" type="text" name="nombre" value="${p.getNombre()}">
+                            <input class="form-control rounded-pill" type="text" name="nombre" value="${p.getNombre()}">
                         </div>
 
                         <div class="form-group">
                             <label>Precio</label>
-                            <input class="form-control" type="text" name="precio" value="${p.getPrecio()}">
+                            <input class="form-control rounded-pill" type="text" name="precio" value="${p.getPrecio()}">
                         </div>
 
                         <div class="form-group">
                             <label>Stock</label>
-                            <input class="form-control" type="text" name="stock" value="${p.getStock()}">
+                            <input class="form-control rounded-pill" type="text" name="stock" value="${p.getStock()}">
                         </div>
 
                         <div class="form-group">
                             <label>Estado</label>
-                            <input class="form-control" type="text" name="estado" value="${p.getEstado()}">
+                            <input class="form-control rounded-pill" type="text" name="estado" value="${p.getEstado()}">
                         </div>
 
-                        <input class="btn btn-info" type="submit" name="accion" value="Agregar">
-                        <input class="btn btn-success" type="submit" name="accion" value="Actualizar">
+                        <input class="btn btn-info rounded-pill" type="submit" name="accion" value="Agregar">
+                        <input class="btn btn-success rounded-pill" type="submit" name="accion" value="Actualizar">
                     </form>
                 </div>
             </div>
@@ -67,8 +67,8 @@
                                 <td>${pr.getStock()}</td>
                                 <td>${pr.getEstado()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Editar&id=${pr.getId()}">Editar</a>
-                                    <a class="btn btn-danger" href="Controlador?menu=Producto&accion=Eliminar&id=${pr.getId()}">Eliminar</a>
+                                    <a class="btn btn-warning rounded-pill" href="Controlador?menu=Producto&accion=Editar&id=${pr.getId()}">Editar</a>
+                                    <a class="btn btn-danger rounded-pill" href="Controlador?menu=Producto&accion=Eliminar&id=${pr.getId()}">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>

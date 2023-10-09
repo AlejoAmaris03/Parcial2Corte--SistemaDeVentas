@@ -22,31 +22,31 @@
                         
                         <div class="form-group">
                             <label>Dni</label>
-                            <input class="form-control" type="text" name="dni" value="${empleado.getDni()}">
+                            <input class="form-control rounded-pill" type="text" name="dni" value="${empleado.getDni()}">
                         </div>
 
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input class="form-control" type="text" name="nombre" value="${empleado.getNombre()}">
+                            <input class="form-control rounded-pill" type="text" name="nombre" value="${empleado.getNombre()}">
                         </div>
 
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input class="form-control" type="text" name="tel" value="${empleado.getTel()}">
+                            <input class="form-control rounded-pill" type="text" name="tel" value="${empleado.getTel()}">
                         </div>
 
                         <div class="form-group">
                             <label>Estado</label>
-                            <input class="form-control" type="text" name="estado" value="${empleado.getEstado()}">
+                            <input class="form-control rounded-pill" type="text" name="estado" value="${empleado.getEstado()}">
                         </div>
 
                         <div class="form-group">
                             <label>Usuario</label>
-                            <input class="form-control" type="text" name="usuario" value="${empleado.getUsuario()}">
+                            <input class="form-control rounded-pill" type="text" name="usuario" value="${empleado.getUsuario()}">
                         </div>
 
-                        <input class="btn btn-info" type="submit" name="accion" value="Agregar">
-                        <input class="btn btn-success" type="submit" name="accion" value="Actualizar">
+                        <input class="btn btn-info rounded-pill" type="submit" name="accion" value="Agregar">
+                        <input class="btn btn-success rounded-pill" type="submit" name="accion" value="Actualizar">
                     </form>
                 </div>
             </div>
@@ -74,8 +74,8 @@
                                 <td>${em.getEstado()}</td>
                                 <td>${em.getUsuario()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Editar&id=${em.getId()}">Editar</a>
-                                    <a class="btn btn-danger" href="Controlador?menu=Empleado&accion=Eliminar&id=${em.getId()}">Eliminar</a>
+                                    <a class="btn btn-warning rounded-pill" href="Controlador?menu=Empleado&accion=Editar&id=${em.getId()}">Editar</a>
+                                    <a class="btn btn-danger rounded-pill" href="Controlador?menu=Empleado&accion=Eliminar&id=${em.getId()}">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>

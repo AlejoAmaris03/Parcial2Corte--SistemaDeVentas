@@ -8,15 +8,36 @@ import java.util.ArrayList;
 
 public class ClienteDAO{
     Conexion c = new Conexion();
-    Connection con;
+    Connection con = c.conexion();
     PreparedStatement ps = null;
     ResultSet rs = null;
     int r;
     
+    public Cliente buscar(String dni){
+        Cliente cl = new Cliente();
+        
+        try{
+            ps = con.prepareStatement("SELECT * FROM Cliente WHERE Dni = "+dni);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                cl.setId(rs.getInt(1));
+                cl.setDni(rs.getString(2));
+                cl.setNombre(rs.getString(3));
+                cl.setDireccion(rs.getString(4));
+                cl.setEstado(rs.getString(5));
+            }
+        } 
+        catch(Exception e){
+            System.out.println("ERROR al buscar en la tabla Cliente\n"+e);
+        }
+        
+        return cl;
+    }
+    
     //Op. del CRUD
     
     public ArrayList<Cliente> listar(){
-        con = c.conexion();
         ArrayList<Cliente> listaC = new ArrayList<Cliente>();
         
         try{
@@ -41,8 +62,6 @@ public class ClienteDAO{
         return listaC;
     }
     public int agregar(Cliente cl){
-        con = c.conexion();
-        
         try{
             ps = con.prepareStatement("INSERT INTO Cliente (Dni,Nombres,Direccion,Estado)"
                 +"VALUES (?,?,?,?)");
@@ -59,7 +78,6 @@ public class ClienteDAO{
         return r;
     }
     public Cliente listarId(int id){
-        con = c.conexion();
         Cliente cl = new Cliente();
         
         try{
@@ -80,9 +98,7 @@ public class ClienteDAO{
         
         return cl;
     }
-    public int actualizar(Cliente cl){
-        con = c.conexion();
-        
+    public int actualizar(Cliente cl){        
         try{
             ps = con.prepareStatement("UPDATE Cliente SET Dni = ?,Nombres = ?, Direccion = ?,Estado = ? WHERE (IdCliente = ?)");
             ps.setString(1,cl.getDni());
@@ -98,9 +114,7 @@ public class ClienteDAO{
         
         return r;
     }
-    public void eliminar(int id){
-        con = c.conexion();
-        
+    public void eliminar(int id){        
         try{
             ps = con.prepareStatement("DELETE FROM Cliente WHERE IdCliente = "+id);
             ps.executeUpdate();

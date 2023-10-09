@@ -8,7 +8,7 @@ public class Conexion{
     private String driver = "com.mysql.cj.jdbc.Driver";
     private String url = "jdbc:mysql://localhost:3306/Ventas";
     private String user = "root";
-    private String password = "";
+    private String password = "123456";
     
     public Connection conexion(){
         try{

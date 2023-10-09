@@ -8,13 +8,12 @@ import java.util.ArrayList;
 
 public class EmpleadoDAO{
     Conexion c = new Conexion();
-    Connection con;
+    Connection con = c.conexion();
     PreparedStatement ps = null;
     ResultSet rs = null;
     int r;
     
     public Empleado validar(String usuario,String clave){
-        con = c.conexion();
         Empleado emp = new Empleado();
         
         try{
@@ -40,7 +39,6 @@ public class EmpleadoDAO{
     //Op. del CRUD
     
     public ArrayList<Empleado> listar(){
-        con = c.conexion();
         ArrayList<Empleado> listaE = new ArrayList<Empleado>();
         
         try{
@@ -66,8 +64,6 @@ public class EmpleadoDAO{
         return listaE;
     }
     public int agregar(Empleado emp){
-        con = c.conexion();
-        
         try{
             ps = con.prepareStatement("INSERT INTO Empleado (Dni,Nombres,Telefono,Estado,User)"
                 +"VALUES (?,?,?,?,?)");
@@ -85,7 +81,6 @@ public class EmpleadoDAO{
         return r;
     }
     public Empleado listarId(int id){
-        con = c.conexion();
         Empleado emp = new Empleado();
         
         try{
@@ -107,9 +102,7 @@ public class EmpleadoDAO{
         
         return emp;
     }
-    public int actualizar(Empleado emp){
-        con = c.conexion();
-        
+    public int actualizar(Empleado emp){        
         try{
             ps = con.prepareStatement("UPDATE Empleado SET Dni = ?,Nombres = ?, Telefono = ?,Estado = ?, User = ? WHERE (IdEmpleado = ?)");
             ps.setString(1,emp.getDni());
@@ -126,9 +119,7 @@ public class EmpleadoDAO{
         
         return r;
     }
-    public void eliminar(int id){
-        con = c.conexion();
-        
+    public void eliminar(int id){        
         try{
             ps = con.prepareStatement("DELETE FROM Empleado WHERE IdEmpleado = "+id);
             ps.executeUpdate();
