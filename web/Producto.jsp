@@ -8,12 +8,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="Estilos/estiloFunNav.css"/>
         <title>Producto</title>
     </head>
-    
+
     <body>
-        <div class="d-flex">
-            <div class="card col-sm-4">
+        <div class="form-group text-center pt-4">
+            <h3>Productos</h3>
+        </div>
+
+        <div class="d-flex pr-5 pl-5 pb-5 pt-1">
+            <div class="form card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=Producto" method="post">
                         <div class="form-group">
@@ -22,26 +27,28 @@
 
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input class="form-control rounded-pill" type="text" name="nombre" value="${p.getNombre()}">
+                            <input class="form-control rounded-pill" type="text" name="nombre" value="${p.getNombre()}" required>
                         </div>
 
                         <div class="form-group">
                             <label>Precio</label>
-                            <input class="form-control rounded-pill" type="text" name="precio" value="${p.getPrecio()}">
+                            <input class="form-control rounded-pill" type="text" name="precio" value="${p.getPrecio()}" required>
                         </div>
 
                         <div class="form-group">
                             <label>Stock</label>
-                            <input class="form-control rounded-pill" type="text" name="stock" value="${p.getStock()}">
+                            <input class="form-control rounded-pill" type="text" name="stock" value="${p.getStock()}" required>
                         </div>
 
                         <div class="form-group">
                             <label>Estado</label>
-                            <input class="form-control rounded-pill" type="text" name="estado" value="${p.getEstado()}">
+                            <input class="form-control rounded-pill" type="text" name="estado" value="${p.getEstado()}" required>
                         </div>
 
-                        <input class="btn btn-info rounded-pill" type="submit" name="accion" value="Agregar">
+
+                        <input class="bt btn btn-info rounded-pill" type="submit" name="accion" value="Agregar">
                         <input class="btn btn-success rounded-pill" type="submit" name="accion" value="Actualizar">
+                        <a class="btn btn-secondary rounded-pill" href="Controlador?menu=Producto&accion=Listar">Limpiar</a>
                     </form>
                 </div>
             </div>

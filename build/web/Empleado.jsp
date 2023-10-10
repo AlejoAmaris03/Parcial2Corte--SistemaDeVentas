@@ -8,11 +8,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="Estilos/estiloFunNav.css"/>
         <title>Empleado</title>
     </head>
 
     <body>
-        <div class="d-flex">
+        <div class="form-group text-center pt-4">
+            <h3>Empleados</h3>
+        </div>
+        
+        <div class="d-flex pr-5 pl-5 pb-5 pt-1">
             <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=Empleado" method="post">
@@ -22,31 +27,32 @@
                         
                         <div class="form-group">
                             <label>Dni</label>
-                            <input class="form-control rounded-pill" type="text" name="dni" value="${empleado.getDni()}">
+                            <input class="form-control rounded-pill" type="text" name="dni" value="${empleado.getDni()}" required>
                         </div>
 
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input class="form-control rounded-pill" type="text" name="nombre" value="${empleado.getNombre()}">
+                            <input class="form-control rounded-pill" type="text" name="nombre" value="${empleado.getNombre()}" required>
                         </div>
 
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input class="form-control rounded-pill" type="text" name="tel" value="${empleado.getTel()}">
+                            <input class="form-control rounded-pill" type="text" name="tel" value="${empleado.getTel()}" required>
                         </div>
 
                         <div class="form-group">
                             <label>Estado</label>
-                            <input class="form-control rounded-pill" type="text" name="estado" value="${empleado.getEstado()}">
+                            <input class="form-control rounded-pill" type="text" name="estado" value="${empleado.getEstado()}" required>
                         </div>
 
                         <div class="form-group">
                             <label>Usuario</label>
-                            <input class="form-control rounded-pill" type="text" name="usuario" value="${empleado.getUsuario()}">
+                            <input class="form-control rounded-pill" type="text" name="usuario" value="${empleado.getUsuario()}" required>
                         </div>
 
                         <input class="btn btn-info rounded-pill" type="submit" name="accion" value="Agregar">
-                        <input class="btn btn-success rounded-pill" type="submit" name="accion" value="Actualizar">
+                       <input class="btn btn-success rounded-pill" type="submit" name="accion" value="Actualizar">
+                       <a class="btn btn-secondary rounded-pill" href="Controlador?menu=Empleado&accion=Listar">Limpiar</a>
                     </form>
                 </div>
             </div>

@@ -7,11 +7,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">        
+        <link rel="stylesheet" type="text/css" href="Estilos/estiloFunNav.css"/>
         <title>JSP Page</title>
     </head>
 
     <body>
-        <div class="d-flex">
+        <div class="form-group text-center pt-4">
+            <h3>Registrar Venta</h3>
+        </div>
+        
+        <div class="d-flex pr-4 pl-4 pb-5 pt-1">
             <div class="col-sm-5">
                 <div class="card">
                     <form action="Controlador?menu=NuevaVenta" method="post">

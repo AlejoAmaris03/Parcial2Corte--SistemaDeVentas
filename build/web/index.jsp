@@ -7,18 +7,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="Estilos/estiloIndex.css"/>
         <title>Iniciar Sesion</title>
     </head>
 
     <body>
-        <div class="container mt-4 col-lg-4 justify-content-center">
-            <div class="card col-sm-10 shadow-lg p-3 mb-5 bg-body rounded">
+        <div class="container col-lg-4 vh-100 d-flex justify-content-center align-items-center">
+            <div class="card col-sm-11">
                 <div class="card-body">
                     <form class="form-sign" action="Validar" method="post">
                         <div class="form-group text-center"> 
                             <h3>Iniciar Sesion</h3>
                             <br>
                             <img src="Imgs/logo.png" alt="Logo" height="50" width="170"/>
+                            <br>
                             <label style="padding-top:10px">Bienvenido/a al Sistema</label>
                         </div>
                         

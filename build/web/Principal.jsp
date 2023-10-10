@@ -7,11 +7,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="Estilos/estiloPrincipal.css"/>
         <title>Principal</title>
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-info d-flex">
+        <nav class="navbar navbar-expand-lg d-flex">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
@@ -25,12 +26,12 @@
                     
                     <li class="nav-item">
                         <a style="margin-left: 10px; border:none; border-radius: 20px" class="btn btn-outline-light" 
-                           href="Controlador?menu=Producto&accion=Listar" target="frame">Producto</a>
+                           href="Controlador?menu=Producto&accion=Listar" target="frame">Productos</a>
                     </li>
 
                     <li class="nav-item">
                         <a style="margin-left: 10px; border:none; border-radius: 20px" class="btn btn-outline-light" 
-                           href="Controlador?menu=Empleado&accion=Listar" target="frame">Empleado</a>
+                           href="Controlador?menu=Empleado&accion=Listar" target="frame">Empleados</a>
                     </li>
 
                     <li class="nav-item">
@@ -66,8 +67,8 @@
             </div>
         </nav>
 
-        <div class="m-4" style="height:650px">
-            <iframe name="frame" style="width:100%;height:100%;border:none"></iframe>
+        <div class="m-4" style="height:680px">
+            <iframe class="frame" name="frame" style="width:100%;height:100%;border:none"></iframe>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
