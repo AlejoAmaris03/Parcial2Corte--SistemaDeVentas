@@ -53,7 +53,7 @@
             </div>
 
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-hover table-dark">
                     <thead>
                         <tr>
                             <th>ID</th>

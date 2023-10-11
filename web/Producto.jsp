@@ -18,7 +18,7 @@
         </div>
 
         <div class="d-flex pr-5 pl-5 pb-5 pt-1">
-            <div class="form card col-sm-4">
+            <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=Producto" method="post">
                         <div class="form-group">
@@ -54,7 +54,7 @@
             </div>
 
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-hover table-dark">
                     <thead>
                         <tr>
                             <th>ID</th>

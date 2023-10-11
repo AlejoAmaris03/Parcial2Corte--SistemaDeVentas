@@ -67,6 +67,7 @@
 
                             <div class="form-group">
                                 <input class="btn btn-info rounded-pill" type="submit" name="accion" value="Agregar">
+                                <a class="btn btn-secondary rounded-pill" href="Controlador?menu=NuevaVenta&accion=default">Limpiar</a>
                             </div>
                         </div>
                     </form>
@@ -82,7 +83,7 @@
                         </div>
                         
                         <br>
-                        <table class="table table-hover">
+                        <table class="table table-hover table-dark">
                             <thead>
                                 <tr>
                                     <th>Nro.</th>

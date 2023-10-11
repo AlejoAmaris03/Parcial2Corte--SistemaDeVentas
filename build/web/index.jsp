@@ -19,7 +19,7 @@
                         <div class="form-group text-center"> 
                             <h3>Iniciar Sesion</h3>
                             <br>
-                            <img src="Imgs/logo.png" alt="Logo" height="50" width="170"/>
+                            <img src="Estilos/Imgs/logo.png" alt="Logo" height="50" width="170"/>
                             <br>
                             <label style="padding-top:10px">Bienvenido/a al Sistema</label>
                         </div>

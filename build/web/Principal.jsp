@@ -53,7 +53,7 @@
 
                 <div class="dropdown-menu text-center">
                     <a class="dropdown-item" href="#">
-                        <img src="Imgs/logoUsuario.jpg" alt="LogoUsuario" height="50" width="50"/>
+                        <img src="Estilos/Imgs/logoUsuario.jpg" alt="LogoUsuario" height="50" width="50"/>
                     </a>
 
                     <a class="dropdown-item" href="#">${user.getUsuario()}</a>

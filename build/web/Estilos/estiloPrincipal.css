@@ -1,13 +1,12 @@
 body{
-    background-image: url(Imgs/fondoIndex.jpg);
-    backdrop-filter: blur(3px);
+    background-image: url(Imgs/fondoPrincipal.jpg);
+    backdrop-filter: blur(5px);
     background-size: 100% 100vh; 
 }
 *{
     font-family: Garamond;
 }
 .frame{
-    position: relative;
     border-radius: 20px;
 }
 nav{

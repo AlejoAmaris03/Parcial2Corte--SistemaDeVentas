@@ -3,4 +3,24 @@ h3{
 }
 body{
     font-family: Garamond;
+    border-radius: 20px;
+    background: none;
+    color: white;
+}
+.card{
+    border-radius: 20px;
+    color: black;
+    background: none;
+    color: white;
+}
+.card::before{
+    content: "";
+    position: absolute;
+    border-radius: 20px;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(52,58,64);
 }
