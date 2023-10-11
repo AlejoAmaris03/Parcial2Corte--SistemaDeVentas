@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 
@@ -15,8 +16,8 @@
         <div class="form-group text-center pt-4">
             <h3>Registrar Venta</h3>
         </div>
-        
-        <div class="d-flex pr-4 pl-4 pb-5 pt-1">
+
+        <div class="d-flex pr-1 pl-1 pb-5 pt-1">
             <div class="col-sm-5">
                 <div class="card">
                     <form action="Controlador?menu=NuevaVenta" method="post">
@@ -42,26 +43,26 @@
 
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input class="form-control" type="text" name="codigoProducto" placeholder="ID">
+                                    <input class="form-control" type="text" name="codigoProducto" value="${p.getId()}" placeholder="ID">
                                     <input class="btn btn-info" type="submit" name="accion" value="Buscar Producto">
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="text" name="nombresProducto" placeholder="Datos Producto">
+                                    <input class="form-control" type="text" name="nombresProducto" value="${p.getNombre()}" placeholder="Datos Producto">
                                 </div>
                             </div>
 
                             <div class="form-group d-flex">
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="text" name="precio" placeholder="S/.0.00">
+                                    <input class="form-control" type="text" name="precio" value="${p.getPrecio()}" placeholder="S/.0.00">
                                 </div>
 
                                 <div class="col-sm-3">
-                                    <input class="form-control" type="number" name="cant">
+                                    <input class="form-control" type="number" name="cant" value="1" placeholder="Cant.">
                                 </div>
 
                                 <div class="col-sm-3">
-                                    <input class="form-control" type="text" name="stock" placeholder="Stock">
+                                    <input class="form-control" type="text" name="stock" value="${p.getStock()}" placeholder="Stock">
                                 </div>
                             </div>
 
@@ -79,9 +80,9 @@
                     <div class="card-body">
                         <div class="d-flex col-sm-5 ml-auto">
                             <label>Número de Serie</label>
-                            <input class="form-control" type="text" name="noSerie">
+                            <input class="form-control rounded-pill" type="text" name="noSerie">
                         </div>
-                        
+
                         <br>
                         <table class="table table-hover table-dark">
                             <thead>
@@ -96,22 +97,34 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                <c:forEach var="v" items="${listaV}">
+                                    <tr>
+                                        <td>${v.getItem()}</td>
+                                        <td>${v.getId()}</td>
+                                        <td>${v.getDescripcionP()}</td>
+                                        <td>${v.getPrecio()}</td>
+                                        <td>${v.getCant()}</td>
+                                        <td>${v.getSubTotal()}</td>
+                                        <td class="d-flex">
+                                            <a class="btn btn-warning rounded-pill" style="margin-right:3px" href="#">Editar</a>
+                                            <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
-                    
-                    <div class="card-footer">
-                        <input class="btn btn-success rounded-pill" type="submit" name="accion" value="Generar Venta">
-                        <input class="btn btn-danger rounded-pill" type="submit" name="accion" value="Cancelar">
+
+                    <div class="card-footer d-flex">
+                        <div class="col-sm-6">
+                            <a class="btn btn-success rounded-pill" href="Controlador?menu=NuevaVenta&accion=Generar+Venta">Generar Venta</a>
+                            <a class="btn btn-danger rounded-pill" href="Controlador?menu=NuevaVenta&accion=Cancelar">Cancelar</a>
+                        </div>
+
+                        <div class="col-sm-4 ml-auto d-flex">
+                            <label class="pr-3">Total</label>
+                            <input class="form-control rounded-pill" type="text" name="total" value="${total}">
+                        </div>
                     </div>
                 </div>
             </div>

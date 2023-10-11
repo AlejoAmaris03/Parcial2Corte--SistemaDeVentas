@@ -6,6 +6,7 @@ import Modelo.Empleado;
 import Modelo.EmpleadoDAO;
 import Modelo.Producto;
 import Modelo.ProductoDAO;
+import Modelo.Venta;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
@@ -28,6 +29,13 @@ public class Controlador extends HttpServlet {
         ProductoDAO pDAO = new ProductoDAO();
         int id;
 
+        Venta v = new Venta();
+        ArrayList<Venta> listaV = Venta.listaV;
+        int cod,cant;
+        int item = listaV.size();
+        String descripcion;
+        double precioP,subTotal,total;
+        
         if (menu.equals("Principal")) {
             request.getRequestDispatcher("/Principal.jsp").forward(request, response);
         }
@@ -208,6 +216,9 @@ public class Controlador extends HttpServlet {
         }
 
         if (menu.equals("NuevaVenta")) {
+            total = 0;
+            request.setAttribute("listaV",listaV);
+            
             switch (accion) {
                 case "Buscar Cliente":
                     String dni = request.getParameter("codigoCliente");
@@ -215,10 +226,42 @@ public class Controlador extends HttpServlet {
                     c = cDAO.buscar(dni);
                     request.setAttribute("c",c);
                     break;
+                case "Buscar Producto":
+                    id = Integer.parseInt(request.getParameter("codigoProducto"));
+                    total = 0;
+                    
+                    p = pDAO.listarId(id);
+                    request.setAttribute("p",p);
+                    break;
+                case "Agregar":
+                    item += 1;
+                    total = 0;
+                    cod = Integer.parseInt(request.getParameter("codigoProducto"));
+                    descripcion = request.getParameter("nombresProducto");
+                    precioP = Double.parseDouble(request.getParameter("precio"));
+                    cant = Integer.parseInt(request.getParameter("cant"));
+                    subTotal = precioP * cant;
+                    
+                    v = new Venta();
+                    v.setItem(item);
+                    v.setId(cod);
+                    v.setDescripcionP(descripcion);
+                    v.setPrecio(precioP);
+                    v.setCant(cant);
+                    v.setSubTotal(subTotal);
+                    listaV.add(v);
+                    break;
+                case "Cancelar":
+                    listaV.clear();
+                    break;
                 default:
                     break;
             }
             
+            for(int i=0; i<listaV.size(); i++)
+                total += listaV.get(i).getSubTotal();
+            
+            request.setAttribute("total",total);
             request.getRequestDispatcher("/RegistrarVenta.jsp").forward(request, response);
         }
     }
