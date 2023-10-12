@@ -21,7 +21,7 @@
                     
                     <li class="nav-item">
                         <a style="margin-left:10px; border:none; border-radius: 20px" class="btn btn-outline-light" 
-                           href="Controlador?menu=Principal">Inicio</a>
+                           href="Controlador?menu=Inicio&accion=default&user=${user.getNombre()}" target="frame">Inicio</a>
                     </li>
                     
                     <li class="nav-item">

@@ -36,8 +36,13 @@ public class Controlador extends HttpServlet {
         String descripcion;
         double precioP,subTotal,total;
         
-        if (menu.equals("Principal")) {
+        if (menu.equals("Principal"))
             request.getRequestDispatcher("/Principal.jsp").forward(request, response);
+        
+        if(menu.equals("Inicio")){
+            String user = request.getParameter("user");
+            
+            request.getRequestDispatcher("/Inicio.jsp").forward(request, response);
         }
 
         if (menu.equals("Empleado")) {
