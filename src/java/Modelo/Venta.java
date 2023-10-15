@@ -6,7 +6,6 @@ public class Venta{
     int id,item,cant,idCliente,idProducto,idEmpleado;
     String numSerie,descripcionP,fecha,estado;
     double precio,subTotal,monto;
-    public static ArrayList<Venta> listaV = new ArrayList<>();
 
     public Venta(){
     }

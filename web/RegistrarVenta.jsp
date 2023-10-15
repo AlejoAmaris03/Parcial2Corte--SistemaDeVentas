@@ -68,7 +68,7 @@
 
                             <div class="form-group">
                                 <input class="btn btn-info rounded-pill" type="submit" name="accion" value="Agregar">
-                                <a class="btn btn-secondary rounded-pill" href="Controlador?menu=NuevaVenta&accion=default">Limpiar</a>
+                                <a class="btn btn-secondary rounded-pill" href="Controlador?menu=NuevaVenta&accion=Limpiar">Limpiar</a>
                             </div>
                         </div>
                     </form>
@@ -80,7 +80,7 @@
                     <div class="card-body">
                         <div class="d-flex col-sm-5 ml-auto">
                             <label>Número de Serie</label>
-                            <input class="form-control rounded-pill" type="text" name="noSerie">
+                            <input class="form-control rounded-pill" type="text" name="noSerie" value="${noSerie}">
                         </div>
 
                         <br>
@@ -122,8 +122,8 @@
                         </div>
 
                         <div class="col-sm-4 ml-auto d-flex">
-                            <label class="pr-3">Total</label>
-                            <input class="form-control rounded-pill" type="text" name="total" value="${total}">
+                            <label class="pr-3 pt-2">Total</label>
+                            <input class="form-control rounded-pill text-center" type="text" name="total" value="S/. ${total}0">
                         </div>
                     </div>
                 </div>
